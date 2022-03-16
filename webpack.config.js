@@ -10,8 +10,8 @@ module.exports = {
   entry: resolve(__dirname, 'src/main.ts'),
   // 输出
   output: {
-    // bundle 引入路径
-    publicPath: './',
+    // !!! bundle 引入路径
+    // publicPath: './',
     // 输出路径
     path: path.join(__dirname, 'dist'),
     // 输出名
@@ -29,18 +29,47 @@ module.exports = {
   devtool: 'inline-source-map',
   // 配置本地服务
   devServer: {
-    progress: true,
-    // static: {
-    //   directory: path.join(__dirname, 'public'),
-    // },
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     compress: true,
-    // port: 9000,
+    port: 3000,
   },
   plugins:[
     new HtmlWebpackPlugin({
-      meta: {
-        title: 'A DAY A DSA'
-      }
+      title: 'A DAY A DSA',
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              // 设置预定义环境
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    // 要兼容的目标浏览器
+                    targets: {
+                      chrome: '58'
+                    },
+                    // 指定 corejs 版本
+                    corejs: "3",
+                    // 使用 corejs 的方式 usage 表示按需加载
+                    useBuiltIns: 'usage'
+                  }
+                ]
+              ]
+            }
+          },
+          'ts-loader'
+        ],
+        exclude: /node_modules/,
+      }
+    ]
+  }
 }
