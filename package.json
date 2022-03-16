@@ -4,7 +4,8 @@
   "description": "日日不断之功。曾国藩说，做学问一定要有日日不断之功，每天都做。不可今天忙，把今天的功课放到明天补；也不可说今天比较空闲，把明天的工作先做了，明天休息；一定要每天做每天的。 #### 简介 之前的项目太杂，这也是为什么新建一个项目的原因，一来之前的太杂了，什么都有，没有一个具体的分类。而来时间一长，里面值得分享的也不多了。所以单独分一个出来",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "webpack serve",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   }
 }

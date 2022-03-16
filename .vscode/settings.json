@@ -1,0 +1,16 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // .eslintrc.js 文件的规则来验证和格式化代码。 和修复代码
+  },
+  "editor.formatOnSave": false, // #每次保存的时候自动格式化
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_line_length": 100,
+      "wrap_attributes": "auto",
+      "end_with_newline": false
+    }
+  },
+  "files.associations": {
+    "*.vue": "vue"
+  }
+}
