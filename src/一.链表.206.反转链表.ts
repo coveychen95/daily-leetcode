@@ -28,6 +28,14 @@
 // curr.next = prev // null
 // prev = curr // null 1
 // curr = next // 2 3 4 5
+
+
+
+/**
+ * @class ListNode
+ * @argument val
+ * @argument next
+ */
 class ListNode {
   val: number
   next: ListNode | null
