@@ -15,7 +15,7 @@ module.exports = {
     // 输出路径
     path: path.join(__dirname, 'dist'),
     // 输出名
-    filename: 'bundle.js',
+    filename: `bundle.${new Date().valueOf()}.js`,
     // 环境配置
     environment: {
       // 不使用箭头函数
