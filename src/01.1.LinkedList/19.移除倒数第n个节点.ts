@@ -52,8 +52,7 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
     right = right!.next;
     n--;
   }
-  // ！！！
-  // 如果右边走到头了 直接返回头结点的下一节点 (而不是返回null）
+  // 如果右边走到头了 说明要删除头结点
   if (right == null) {
     head = head!.next;
     return head;
